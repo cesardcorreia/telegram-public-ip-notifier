@@ -2,6 +2,8 @@ import requests
 import telegram
 import os
 from dotenv import load_dotenv
+import urllib.parse
+
 load_dotenv()
 
 class IpNotifierBot:
@@ -64,7 +66,7 @@ class IpNotifierBot:
             print("Sending Telegram message...")
 
             self.bot.send_message(
-                text="Amigo o teu IP mudou!!!: %s" % (self.public_ip), 
+                text="Amigo o teu IP mudou!!!\n\nNovo IP: %s" % (self.public_ip), 
                 chat_id=self.chat_id
             )
 
